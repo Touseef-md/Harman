@@ -6,13 +6,13 @@ import sprigImg from "@/assets/sprig.png";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Dr. Anjali Rao — Classical Homeopathy & Holistic Care" },
+      { title: "Dr. Ritu Sandhu — Classical Homeopathy & Holistic Care" },
       {
         name: "description",
         content:
-          "Gentle, individualized homeopathic care for chronic conditions, women's health, and pediatrics. Consultations in clinic and online with Dr. Anjali Rao.",
+          "Gentle, individualized homeopathic care for chronic conditions, women's health, and pediatrics. Consultations in clinic and online with Dr. Ritu Sandhu.",
       },
-      { property: "og:title", content: "Dr. Anjali Rao — Classical Homeopathy" },
+      { property: "og:title", content: "Dr. Ritu Sandhu — Classical Homeopathy" },
       {
         property: "og:description",
         content:
@@ -29,10 +29,10 @@ function Home() {
     <div className="min-h-screen bg-background text-foreground">
       <Nav />
       <Hero />
-      <Philosophy />
+      <Homeopathy />
+      <Services />
       <About />
-      <Treatments />
-      <Testimonials />
+      <Consultations />
       <Contact />
       <Footer />
     </div>
@@ -44,15 +44,15 @@ function Nav() {
     <header className="absolute top-0 left-0 right-0 z-30">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-10 md:py-8">
         <a href="#top" className="flex items-baseline gap-2 text-foreground">
-          <span className="font-display text-2xl tracking-tight">Anjali Rao</span>
-          <span className="eyebrow hidden sm:inline">md (hom)</span>
+          <span className="font-display text-2xl tracking-tight">Ritu Sandhu</span>
+          <span className="eyebrow hidden sm:inline">BHMS</span>
         </a>
         <nav className="hidden items-center gap-9 md:flex">
           {[
-            ["Philosophy", "#philosophy"],
-            ["About", "#about"],
-            ["Care", "#treatments"],
-            ["Voices", "#testimonials"],
+            ["Homeopathy", "#homeopathy"],
+            ["Services", "#services"],
+            ["About Us", "#about"],
+            ["Consultations", "#consultations"],
           ].map(([label, href]) => (
             <a
               key={href}
@@ -108,7 +108,7 @@ function Hero() {
             <br />by nature.
           </h1>
           <p className="mt-8 max-w-lg text-lg leading-relaxed text-foreground/75">
-            Individualized homeopathic care from Dr. Anjali Rao — treating the
+            Individualized homeopathic care from Dr. Ritu Sandhu — treating the
             person, not only the diagnosis. Quiet consultations, considered
             remedies, lasting relief.
           </p>
@@ -120,7 +120,7 @@ function Hero() {
               Book a consultation
             </a>
             <a
-              href="#philosophy"
+              href="#homeopathy"
               className="rounded-full border border-moss/25 px-7 py-3.5 text-sm tracking-wide text-moss transition-all hover:border-moss"
             >
               The approach →
@@ -128,8 +128,8 @@ function Hero() {
           </div>
           <dl className="mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-foreground/10 pt-6">
             {[
-              ["17+", "years in practice"],
-              ["2,400", "patients served"],
+              ["25+", "years in practice"],
+              ["9,000", "patients served"],
               ["94%", "report relief"],
             ].map(([n, l]) => (
               <div key={l}>
@@ -146,38 +146,36 @@ function Hero() {
   );
 }
 
-function Philosophy() {
+function Homeopathy() {
   const tenets = [
     {
       n: "I",
-      t: "Similia similibus curentur",
-      d: "Like cures like — the founding principle of homeopathy, choosing remedies that resonate with the body's own signals.",
+      t: "Healing Naturally",
+      d: "A system that works to maintain a balance between our physical and mental plane. We treat the person, not just the tissues.",
     },
     {
       n: "II",
-      t: "The minimum dose",
-      d: "Highly diluted preparations that gently stimulate the body's vital force without burdening it.",
+      t: "The Root Cause",
+      d: "Symptoms are only the outward reflection of an internal derangement in the vital energy. We seek to heal the sick, not the results of sickness.",
     },
     {
       n: "III",
-      t: "The whole person",
-      d: "Mind, body, and temperament considered together — because no two people, even with the same diagnosis, are alike.",
+      t: "Information, Not Molecules",
+      d: "Remedies pass information to the body, coaxing an immune reaction so it may adapt to optimal function and heal itself.",
     },
   ];
   return (
-    <section id="philosophy" className="relative px-6 py-28 md:px-10 md:py-40">
+    <section id="homeopathy" className="relative px-6 py-20 md:px-10 md:py-40">
       <div className="mx-auto max-w-6xl">
         <div className="mb-20 flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <div className="max-w-xl">
-            <p className="eyebrow mb-4"><span className="deco-rule mr-3" />Philosophy</p>
+            <p className="eyebrow mb-4"><span className="deco-rule mr-3" />System of Healing</p>
             <h2 className="font-display text-4xl leading-tight text-moss md:text-6xl">
-              A practice rooted in <em className="italic">listening</em>.
+              Homeopathy: <em className="italic">Healing Naturally</em>.
             </h2>
           </div>
           <p className="max-w-md text-foreground/70">
-            Every consultation begins with an unhurried conversation — your story
-            is the first remedy. From there, the work is to find what gently
-            restores balance, without suppression or harm.
+            Classical homeopathy treats the individual and not the symptoms. By reminding the body to adapt to optimal function, true balance is restored.
           </p>
         </div>
 
@@ -203,7 +201,7 @@ function About() {
           <div className="absolute -top-6 -left-6 h-full w-full rounded-sm border border-sage-deep/30" />
           <img
             src={doctorImg}
-            alt="Portrait of Dr. Anjali Rao"
+            alt="Portrait of Dr. Ritu Sandhu"
             className="relative h-[32rem] w-full rounded-sm object-cover"
             loading="lazy"
             width={1200}
@@ -217,35 +215,27 @@ function About() {
           />
         </div>
         <div>
-          <p className="eyebrow mb-4"><span className="deco-rule mr-3" />About the doctor</p>
+          <p className="eyebrow mb-4"><span className="deco-rule mr-3" />About us</p>
           <h2 className="font-display text-4xl leading-tight text-moss md:text-5xl">
-            Dr. Anjali Rao,<br />
-            <em className="italic text-sage-deep">classical homeopath</em>.
+            A unified manner of<br />
+            <em className="italic text-sage-deep">natural healing</em>.
           </h2>
           <p className="mt-8 leading-relaxed text-foreground/80">
-            Trained at the National Institute of Homeopathy and in clinical
-            practice for over seventeen years, Dr. Rao combines the rigour of
-            classical Hahnemannian method with the patience of a careful
-            listener. Her clinic in Bangalore — and her online consultations —
-            welcome patients seeking a gentler path through chronic illness.
+            This website is formed with the intent of presenting natural healing in a unified manner online. Our approach is deeply holistic, working across the conscious spectrum of the human experience.
           </p>
           <p className="mt-5 leading-relaxed text-foreground/80">
-            Her work focuses on autoimmune conditions, hormonal health,
-            paediatric care, and the long, layered presentations that often go
-            unseen in shorter appointments elsewhere.
+            While most medicine systems concentrate on manifested molecules alone, we strive to bring balance across the inter-related field of mind, body, and emotions. Our goal is to help you resume good health using natural therapies.
           </p>
 
           <ul className="mt-10 space-y-3 border-t border-border pt-8 text-sm">
-            {[
-              "BHMS, National Institute of Homeopathy (Kolkata)",
-              "MD (Hom), Materia Medica",
-              "Member, Liga Medicorum Homœopathica Internationalis",
-            ].map((c) => (
-              <li key={c} className="flex gap-3 text-foreground/75">
-                <span className="text-sage-deep">—</span>
-                {c}
-              </li>
-            ))}
+            <li className="flex gap-3 text-foreground/75">
+              <span className="text-sage-deep">—</span>
+              Consultations by renowned holistic doctor
+            </li>
+            <li className="flex gap-3 text-foreground/75">
+              <span className="text-sage-deep">—</span>
+              Safe, quick, and permanent journey of healing
+            </li>
           </ul>
         </div>
       </div>
@@ -253,52 +243,35 @@ function About() {
   );
 }
 
-function Treatments() {
-  const groups = [
-    {
-      title: "Chronic & autoimmune",
-      items: ["Rheumatoid arthritis", "Psoriasis & eczema", "Thyroid disorders", "Migraine & chronic headache"],
-    },
-    {
-      title: "Women's health",
-      items: ["PCOS & menstrual irregularities", "Fertility support", "Menopausal care", "Recurrent UTIs"],
-    },
-    {
-      title: "Paediatric care",
-      items: ["Recurrent colds & allergies", "Behavioural concerns", "Childhood asthma", "Digestive issues"],
-    },
-    {
-      title: "Mind & temperament",
-      items: ["Anxiety & sleep", "Grief and life transitions", "Stress-related conditions", "Burnout recovery"],
-    },
+function Services() {
+  const items = [
+    { title: "Customized Treatment", desc: "Expert homeopathic care from a renowned and experienced doctor." },
+    { title: "Worldwide Delivery", desc: "Your prescribed medicines are delivered safely to your doorstep." },
+    { title: "Global Consultations", desc: "Reach us for health queries and support through email or phone." }
   ];
   return (
-    <section id="treatments" className="px-6 py-28 md:px-10 md:py-40">
+    <section id="services" className="px-6 py-28 md:px-10 md:py-40">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 max-w-2xl">
-          <p className="eyebrow mb-4"><span className="deco-rule mr-3" />Areas of care</p>
+          <p className="eyebrow mb-4"><span className="deco-rule mr-3" />What we offer</p>
           <h2 className="font-display text-4xl leading-tight text-moss md:text-6xl">
-            Conditions <em className="italic">treated</em>.
+            Our <em className="italic">Services</em>.
           </h2>
           <p className="mt-6 text-foreground/70">
-            A non-exhaustive list — if your condition isn't here, please write.
-            Many presentations are layered, and homeopathy considers them
-            together rather than apart.
+            A centre of excellence providing comprehensive and holistic support.
           </p>
         </div>
 
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {groups.map((g, i) => (
-            <div key={g.title} className="border-t border-foreground/15 pt-6">
+        <div className="grid gap-12 md:grid-cols-3">
+          {items.map((it, i) => (
+            <div key={i} className="border-t border-foreground/15 pt-6">
               <span className="font-display text-sm italic text-sage-deep">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-3 font-display text-2xl text-moss">{g.title}</h3>
-              <ul className="mt-6 space-y-2 text-sm text-foreground/75">
-                {g.items.map((it) => (
-                  <li key={it}>{it}</li>
-                ))}
-              </ul>
+              <h3 className="mt-4 font-display text-2xl text-moss">{it.title}</h3>
+              <p className="mt-3 text-sm text-foreground/80 leading-relaxed">
+                {it.desc}
+              </p>
             </div>
           ))}
         </div>
@@ -307,50 +280,44 @@ function Treatments() {
   );
 }
 
-function Testimonials() {
-  const items = [
+function Consultations() {
+  const steps = [
     {
-      q: "After years of bouncing between specialists, Dr. Rao was the first to ask about my whole life. Six months on her remedies and my migraines have nearly disappeared.",
-      a: "Meera S.",
-      r: "Patient since 2022",
+      q: "A Counseling-type Setting",
+      a: "I encourage you to discuss as much detail about how you have suffered. What has affected you? How? Together, we unearth the root causes.",
     },
     {
-      q: "Patient, precise, and quietly brilliant. She treated my daughter's eczema with such care — no harsh creams, no rush.",
-      a: "Rohan K.",
-      r: "Patient since 2020",
+      q: "Understanding Patterns",
+      a: "Factors like dreams, cravings, and dislikes provide insight. We look for the connecting theme with the innermost disturbance of energy.",
     },
     {
-      q: "I came skeptical and stayed because it worked. Her practice feels closer to old medicine — the kind that listens first.",
-      a: "Anita D.",
-      r: "Patient since 2019",
+      q: "Healing Journey as a Team",
+      a: "Though physical exams may not be performed during the consultation, we work as a team to support you in a safe and natural healing process.",
     },
   ];
   return (
-    <section id="testimonials" className="bg-moss px-6 py-28 text-cream md:px-10 md:py-40">
+    <section id="consultations" className="bg-moss px-6 py-28 text-cream md:px-10 md:py-40">
       <div className="mx-auto max-w-6xl">
         <div className="mb-16 flex items-end justify-between gap-6">
           <div>
             <p className="eyebrow mb-4 text-sage">
-              <span className="deco-rule mr-3 bg-sage" />Voices
+              <span className="deco-rule mr-3 bg-sage" />The Process
             </p>
             <h2 className="font-display text-4xl leading-tight md:text-6xl">
-              In their <em className="italic text-sage">own words</em>.
+              <em className="italic text-sage">Consultations</em>
             </h2>
           </div>
         </div>
 
         <div className="grid gap-12 md:grid-cols-3">
-          {items.map((t) => (
-            <figure key={t.a} className="flex flex-col">
-              <span className="font-display text-6xl leading-none text-sage">“</span>
-              <blockquote className="mt-2 font-display text-xl leading-snug italic">
+          {steps.map((t, i) => (
+            <figure key={i} className="flex flex-col">
+              <span className="font-display text-5xl leading-none text-sage">{String(i + 1).padStart(2, "0")}</span>
+              <blockquote className="mt-4 font-display text-xl leading-snug italic">
                 {t.q}
               </blockquote>
-              <figcaption className="mt-8 border-t border-cream/15 pt-4">
-                <div className="text-sm tracking-wide">{t.a}</div>
-                <div className="mt-0.5 text-xs uppercase tracking-widest text-cream/60">
-                  {t.r}
-                </div>
+              <figcaption className="mt-6 border-t border-cream/15 pt-4 text-sm tracking-wide text-cream/80 leading-relaxed">
+                {t.a}
               </figcaption>
             </figure>
           ))}
@@ -371,28 +338,28 @@ function Contact() {
           </h2>
           <p className="mt-6 max-w-md text-foreground/70">
             First consultations last 60–75 minutes — long enough for the full
-            picture. Follow-ups are 30 minutes. Available in clinic or online.
+            picture. Follow-ups are 30 minutes.
           </p>
 
           <dl className="mt-12 space-y-7 text-sm">
-            <div>
+            {/* <div>
               <dt className="eyebrow mb-1">Clinic</dt>
               <dd className="font-display text-lg text-moss">
                 12 Lavelle Lane, Off Cunningham Road<br />
                 Bangalore 560052
               </dd>
-            </div>
+            </div> */}
             <div>
               <dt className="eyebrow mb-1">Hours</dt>
-              <dd className="text-foreground/80">Tue – Sat · 10:00 – 18:00 · By appointment</dd>
+              <dd className="text-foreground/80">Mon – Sat · 11:00 –19:00 · By appointment</dd>
             </div>
             <div>
               <dt className="eyebrow mb-1">Direct</dt>
               <dd className="space-y-1 text-foreground/80">
-                <div>+91 80 4112 7788</div>
+                <div>+91 95 0108 5298</div>
                 <div>
                   <a href="mailto:clinic@anjalirao.health" className="underline-offset-4 hover:underline">
-                    clinic@anjalirao.health
+                    drritu4179@gmail.com
                   </a>
                 </div>
               </dd>
@@ -462,7 +429,7 @@ function Footer() {
   return (
     <footer className="border-t border-border bg-secondary px-6 py-12 md:px-10">
       <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 text-sm text-muted-foreground md:flex-row md:items-center">
-        <div className="font-display text-lg text-moss">Dr. Anjali Rao · Classical Homeopathy</div>
+        <div className="font-display text-lg text-moss">Dr. Ritu Sandhu · Classical Homeopathy</div>
         <div>© {new Date().getFullYear()} · All rights reserved.</div>
       </div>
     </footer>
